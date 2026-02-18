@@ -1,9 +1,12 @@
 const express = require("express");
+const healthRoutes = require("./routes/health.routes");
 
 const app = express();
 
 // middleware to read JSON
 app.use(express.json());
+app.use("/api", healthRoutes);
+
 
 // home route
 app.get("/", (req, res) => {
